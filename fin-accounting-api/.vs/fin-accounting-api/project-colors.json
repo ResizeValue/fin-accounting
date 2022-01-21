@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "ecfb314e-4e1a-4b02-be74-bcdb497a1bc4": {
+      "ProjectGuid": "ecfb314e-4e1a-4b02-be74-bcdb497a1bc4",
+      "DisplayName": "fin-accounting-api",
+      "ColorIndex": 0
+    },
+    "e3d85b0a-a6ab-4372-ae5c-fb337225fbf9": {
+      "ProjectGuid": "e3d85b0a-a6ab-4372-ae5c-fb337225fbf9",
+      "DisplayName": "fin-accounting-api.Application",
+      "ColorIndex": 1
+    },
+    "b8124bcf-3332-4e77-9b94-801022964ae4": {
+      "ProjectGuid": "b8124bcf-3332-4e77-9b94-801022964ae4",
+      "DisplayName": "fin-accounting-api.Persistance",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 3
+}

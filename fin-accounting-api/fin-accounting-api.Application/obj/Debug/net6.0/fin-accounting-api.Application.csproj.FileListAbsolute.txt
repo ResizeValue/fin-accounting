@@ -1,0 +1,11 @@
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\bin\Debug\net6.0\fin-accounting-api.Application.deps.json
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\bin\Debug\net6.0\fin-accounting-api.Application.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\bin\Debug\net6.0\ref\fin-accounting-api.Application.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\bin\Debug\net6.0\fin-accounting-api.Application.pdb
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.AssemblyInfo.cs
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\ref\fin-accounting-api.Application.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Application\obj\Debug\net6.0\fin-accounting-api.Application.pdb

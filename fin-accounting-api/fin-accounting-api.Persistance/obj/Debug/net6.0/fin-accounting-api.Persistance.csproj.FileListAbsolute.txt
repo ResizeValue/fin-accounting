@@ -1,0 +1,12 @@
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\bin\Debug\net6.0\fin-accounting-api.Persistance.deps.json
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\bin\Debug\net6.0\fin-accounting-api.Persistance.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\bin\Debug\net6.0\ref\fin-accounting-api.Persistance.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\bin\Debug\net6.0\fin-accounting-api.Persistance.pdb
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.csproj.AssemblyReference.cache
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.AssemblyInfoInputs.cache
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.AssemblyInfo.cs
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.csproj.CoreCompileInputs.cache
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\ref\fin-accounting-api.Persistance.dll
+C:\Users\user\source\repos\fin-accounting-api\fin-accounting-api.Persistance\obj\Debug\net6.0\fin-accounting-api.Persistance.pdb
