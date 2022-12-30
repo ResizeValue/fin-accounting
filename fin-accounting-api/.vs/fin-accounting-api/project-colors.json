@@ -1,20 +1,30 @@
 {
   "Version": 1,
   "ProjectMap": {
-    "ecfb314e-4e1a-4b02-be74-bcdb497a1bc4": {
-      "ProjectGuid": "ecfb314e-4e1a-4b02-be74-bcdb497a1bc4",
-      "DisplayName": "fin-accounting-api",
+    "5f407bb8-8ac0-4726-9c63-48d88a78c68f": {
+      "ProjectGuid": "5f407bb8-8ac0-4726-9c63-48d88a78c68f",
+      "DisplayName": "fin-accounting-api.UI",
       "ColorIndex": 0
     },
-    "e3d85b0a-a6ab-4372-ae5c-fb337225fbf9": {
-      "ProjectGuid": "e3d85b0a-a6ab-4372-ae5c-fb337225fbf9",
+    "45d80f5f-1b38-4394-8ce9-b302edd53a12": {
+      "ProjectGuid": "45d80f5f-1b38-4394-8ce9-b302edd53a12",
       "DisplayName": "fin-accounting-api.Application",
       "ColorIndex": 1
     },
-    "b8124bcf-3332-4e77-9b94-801022964ae4": {
-      "ProjectGuid": "b8124bcf-3332-4e77-9b94-801022964ae4",
-      "DisplayName": "fin-accounting-api.Persistance",
+    "6953836c-f342-4fac-84a9-0487e0025247": {
+      "ProjectGuid": "6953836c-f342-4fac-84a9-0487e0025247",
+      "DisplayName": "fin-accounting-api.Domain",
       "ColorIndex": 2
+    },
+    "2fdb9586-94b4-4efa-8ed9-8426ad020afe": {
+      "ProjectGuid": "2fdb9586-94b4-4efa-8ed9-8426ad020afe",
+      "DisplayName": "fin-accounting-api.Persistance",
+      "ColorIndex": 3
+    },
+    "c3bc3909-c2cd-40b5-88d2-45e98ddc5b17": {
+      "ProjectGuid": "c3bc3909-c2cd-40b5-88d2-45e98ddc5b17",
+      "DisplayName": "fin-accounting-api.InfrastructureIoC",
+      "ColorIndex": 4
     },
     "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
@@ -22,5 +32,5 @@
       "ColorIndex": -1
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 5
 }

@@ -4,6 +4,7 @@ import store from './store'
 import router from './router'
 import vuetify from './plugins/vuetify'
 import VueCookie from 'vue-cookie'
+import './index.css'
 
 Vue.config.productionTip = false
 Vue.use(VueCookie)

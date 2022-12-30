@@ -1,31 +1,9 @@
 <template>
-  <v-app>
-    <div>
-      <v-toolbar
-        dark
-        prominent
-        src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
-      >
-        <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-        <v-toolbar-title>Vuetify</v-toolbar-title>
-        <v-spacer></v-spacer>
-        <v-btn icon>
-          <v-icon>mdi-export</v-icon>
-        </v-btn>
-      </v-toolbar>
-    </div>
-    <v-navigation-drawer v-model="drawer" temporary app> </v-navigation-drawer>
-    <v-main>
-      <router-view>
-        
-      </router-view>
-      <resource-page></resource-page>
-    </v-main>
-  </v-app>
+  <page-layout></page-layout>
 </template>
 
 <script>
-import ResourcePage from "./components/Resource.vue";
+import PageLayout from './components/Layouts/PageLayout.vue';
 
 export default {
   name: "App",
@@ -37,7 +15,7 @@ export default {
     accessTokenExpired: false,
   }),
   components: {
-    'resource-page': ResourcePage
+    PageLayout
   },
 
   methods: {
@@ -60,7 +38,6 @@ export default {
         .dispatch("logginUser", {})
         .then((res) => {
           console.log("Success");
-          //console.log(res.data);
           this.$cookie.set("auth", JSON.stringify(res.data));
         })
         .catch((err) => {
@@ -68,6 +45,9 @@ export default {
         });
     },
   },
+  created() {
+    this.$store.dispatch("silentLogin");
+  }
 };
 </script>
 

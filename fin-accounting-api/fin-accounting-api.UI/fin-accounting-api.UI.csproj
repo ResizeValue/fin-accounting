@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>fin_accounting_api.UI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\fin-accounting-api.InfrastructureIoC\fin-accounting-api.InfrastructureIoC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Images\8677c130-5d40-42aa-8553-2a9abbcfc8c4.png" />
+    <None Include="wwwroot\Images\f43885df-7db1-4e07-9a5f-5072f4a31847.png" />
+    <None Include="wwwroot\Images\fe608a08-a2dd-4212-ba18-a681942c9f87.png" />
+  </ItemGroup>
+
+</Project>
