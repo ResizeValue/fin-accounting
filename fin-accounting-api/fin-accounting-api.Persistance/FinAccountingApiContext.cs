@@ -1,4 +1,5 @@
-﻿using FinAccountingApi.Domain.Resources;
+﻿using FinAccountingApi.Domain.PaymentCheck;
+using FinAccountingApi.Domain.Resources;
 using FinAccountingApi.Domain.Resources.Configs;
 using FinAccountingApi.Domain.Users;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -10,7 +11,6 @@ namespace FinAccountingApi.Persistance
     {
         public FinAccountingApiContext()
         {
-            Database.Migrate();
         }
 
         public FinAccountingApiContext(DbContextOptions<FinAccountingApiContext> options)
@@ -19,9 +19,13 @@ namespace FinAccountingApi.Persistance
             Database.Migrate();
         }
 
+        public DbSet<Tag> Tags { get; set; }
         public DbSet<ApiUser> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<UserResource> UserResources { get; set; }
         public DbSet<OwnershipCost> OwnershipCost { get; set; }
+        public DbSet<PaymentCheck> PaymentChecks { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

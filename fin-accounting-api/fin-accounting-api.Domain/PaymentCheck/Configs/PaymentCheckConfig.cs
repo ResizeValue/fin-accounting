@@ -10,7 +10,6 @@ namespace FinAccountingApi.Domain.PaymentCheck.Configs
         public void Configure(EntityTypeBuilder<PaymentCheck> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.User);
         }
     }
 }

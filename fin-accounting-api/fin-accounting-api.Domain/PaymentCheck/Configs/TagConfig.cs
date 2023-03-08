@@ -9,7 +9,6 @@ namespace FinAccountingApi.Domain.PaymentCheck.Configs
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Name);
-            builder.Property(x => x.User);
         }
     }
 }
