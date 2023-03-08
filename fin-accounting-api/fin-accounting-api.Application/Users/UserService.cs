@@ -1,6 +1,6 @@
-﻿using fin_accounting_api.Application.Accounts.Auth;
-using fin_accounting_api.Application.Resources.Mapper;
-using fin_accounting_api.Domain.Users;
+﻿using FinAccountingApi.Application.Accounts.Auth;
+using FinAccountingApi.Application.Resources.Mapper;
+using FinAccountingApi.Domain.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -8,7 +8,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-namespace fin_accounting_api.Application.Users
+namespace FinAccountingApi.Application.Users
 {
     public class UserService
     {

@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using fin_accounting_api.Persistance;
+using FinAccountingApi.Persistance;
 
 #nullable disable
 
-namespace fin_accounting_api.Persistance.Migrations
+namespace FinAccountingApi.Persistance.Migrations
 {
-    [DbContext(typeof(Fin_accounting_apiContext))]
+    [DbContext(typeof(FinAccountingApiContext))]
     [Migration("20220205212540_Initial")]
     partial class Initial
     {

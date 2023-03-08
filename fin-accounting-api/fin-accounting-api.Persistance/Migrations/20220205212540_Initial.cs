@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace fin_accounting_api.Persistance.Migrations
+namespace FinAccountingApi.Persistance.Migrations
 {
     public partial class Initial : Migration
     {

@@ -1,14 +1,14 @@
-﻿using fin_accounting_api.Application.Resources;
-using fin_accounting_api.Domain.Resources;
+﻿using FinAccountingApi.Application.Resources;
+using FinAccountingApi.Domain.Resources;
 using Microsoft.EntityFrameworkCore;
 
-namespace fin_accounting_api.Persistance.Resources
+namespace FinAccountingApi.Persistance.Resources
 {
     public class ResourcesRepository : IResourceRepository
     {
-        private readonly Fin_accounting_apiContext _apiContext;
+        private readonly FinAccountingApiContext _apiContext;
 
-        public ResourcesRepository(Fin_accounting_apiContext apiContext)
+        public ResourcesRepository(FinAccountingApiContext apiContext)
         {
             _apiContext = apiContext;
         }

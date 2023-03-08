@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 
-namespace fin_accounting_api.Application.Resources.Forms
+namespace FinAccountingApi.Application.Resources.Forms
 {
     public class ResourceForm
     {

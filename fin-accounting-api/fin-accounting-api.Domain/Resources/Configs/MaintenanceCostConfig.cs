@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace fin_accounting_api.Domain.Resources.Configs
+namespace FinAccountingApi.Domain.Resources.Configs
 {
     public class MaintenanceCostConfig : IEntityTypeConfiguration<OwnershipCost>
     {

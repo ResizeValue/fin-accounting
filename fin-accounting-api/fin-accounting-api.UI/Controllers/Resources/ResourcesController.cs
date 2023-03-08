@@ -1,12 +1,12 @@
-﻿using fin_accounting_api.Application.Resources;
-using fin_accounting_api.Application.Resources.Forms;
-using fin_accounting_api.Application.Resources.OwnershipCost;
-using fin_accounting_api.Application.Users;
+﻿using FinAccountingApi.Application.Resources;
+using FinAccountingApi.Application.Resources.Forms;
+using FinAccountingApi.Application.Resources.OwnershipCost;
+using FinAccountingApi.Application.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 
-namespace fin_accounting_api.UI.Controllers.Resources
+namespace FinAccountingApi.UI.Controllers.Resources
 {
     [Route("api/[controller]")]
     [ApiController]

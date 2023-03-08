@@ -1,4 +1,4 @@
-﻿namespace fin_accounting_api.Domain.Resources
+﻿namespace FinAccountingApi.Domain.Resources
 {
     public class OwnershipCost
     {

@@ -1,11 +1,11 @@
-﻿using fin_accounting_api.Application.Resources;
+﻿using FinAccountingApi.Application.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fin_accounting_api.Application.Users
+namespace FinAccountingApi.Application.Users
 {
     public class UserModel
     {

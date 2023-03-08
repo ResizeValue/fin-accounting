@@ -1,6 +1,6 @@
-﻿using fin_accounting_api.Application.Resources.OwnershipCost;
+﻿using FinAccountingApi.Application.Resources.OwnershipCost;
 
-namespace fin_accounting_api.Application.Resources.Mapper
+namespace FinAccountingApi.Application.Resources.Mapper
 {
     public class OwnershipCostMapper
     {

@@ -1,4 +1,4 @@
-﻿namespace fin_accounting_api.Application.Accounts.Auth
+﻿namespace FinAccountingApi.Application.Accounts.Auth
 {
     public class RegisterModel
     {

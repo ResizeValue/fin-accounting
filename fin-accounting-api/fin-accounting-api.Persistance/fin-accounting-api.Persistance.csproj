@@ -5,6 +5,7 @@
     <RootNamespace>fin_accounting_api.Persistance</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+	<NoWarn>CS8618</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,10 +1,10 @@
-﻿using fin_accounting_api.Application.Accounts;
-using fin_accounting_api.Application.Accounts.Auth;
-using fin_accounting_api.Application.Users;
+﻿using FinAccountingApi.Application.Accounts;
+using FinAccountingApi.Application.Accounts.Auth;
+using FinAccountingApi.Application.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace fin_accounting_api.UI.Controllers.Accounts
+namespace FinAccountingApi.UI.Controllers.Accounts
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,7 +1,7 @@
-﻿using fin_accounting_api.Domain.Users;
+﻿using FinAccountingApi.Domain.Users;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace fin_accounting_api.Domain.Resources
+namespace FinAccountingApi.Domain.Resources
 {
     public class UserResource
     {

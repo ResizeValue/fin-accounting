@@ -1,11 +1,11 @@
-﻿using fin_accounting_api.Application.Resources.Forms;
-using fin_accounting_api.Application.Resources.Mapper;
-using fin_accounting_api.Application.Resources.OwnershipCost;
-using fin_accounting_api.Application.Users;
-using fin_accounting_api.Domain.Resources;
+﻿using FinAccountingApi.Application.Resources.Forms;
+using FinAccountingApi.Application.Resources.Mapper;
+using FinAccountingApi.Application.Resources.OwnershipCost;
+using FinAccountingApi.Application.Users;
+using FinAccountingApi.Domain.Resources;
 using Microsoft.Extensions.Configuration;
 
-namespace fin_accounting_api.Application.Resources
+namespace FinAccountingApi.Application.Resources
 {
     public class ResourceService
     {
