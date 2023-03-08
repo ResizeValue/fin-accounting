@@ -14,6 +14,7 @@ namespace FinAccountingApi.UI.Controllers.Resources
     {
         private readonly ResourceService _resourceService;
         private readonly IConfiguration _config;
+
         public ResourcesController(ResourceService resourceService,
             IConfiguration config)
         {
@@ -22,9 +23,21 @@ namespace FinAccountingApi.UI.Controllers.Resources
         }
 
         [HttpGet]
-        public IActionResult Index()
+        [Route("resourceId/{id}")]
+        public async Task<IActionResult> GetUserResource(int id)
         {
-            return Ok();
+            var resource = await _resourceService.GetResourceById(id);
+
+            return Ok(resource);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetUserResourcesRoot(string id)
+        {
+            var resources = await _resourceService.GetUserResources(id);
+
+            return Ok(resources);
         }
 
         [HttpPost]
@@ -65,24 +78,6 @@ namespace FinAccountingApi.UI.Controllers.Resources
             await _resourceService.DeleteResource(id);
 
             return Ok();
-        }
-
-        [HttpGet]
-        [Route("resourceId/{id}")]
-        public async Task<IActionResult> GetUserResource(int id)
-        {
-            var resource = await _resourceService.GetResourceById(id);
-
-            return Ok(resource);
-        }
-
-        [HttpGet]
-        [Route("userId/{id}")]
-        public async Task<IActionResult> GetUserResourcesRoot(string id)
-        {
-            var resources = await _resourceService.GetUserResources(id);
-
-            return Ok(resources);
         }
     }
 }

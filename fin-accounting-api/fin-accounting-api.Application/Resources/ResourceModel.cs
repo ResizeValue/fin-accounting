@@ -1,6 +1,5 @@
 ﻿using FinAccountingApi.Application.Resources.OwnershipCost;
 using FinAccountingApi.Application.Users;
-using FinAccountingApi.Domain.Resources;
 
 namespace FinAccountingApi.Application.Resources
 {
