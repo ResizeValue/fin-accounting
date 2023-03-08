@@ -3,37 +3,12 @@
     <h1 class="mb-10">New ownership cost product</h1>
     <div class="form-container">
       <form enctype="multipart/form-data">
-        <v-text-field
-          v-model="name"
-          :error-messages="nameErrors"
-          :counter="10"
-          label="Name"
-          required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
-        ></v-text-field>
-        <v-text-field
-          label="Cost"
-          v-model="cost"
-          value="10"
-          required
-          prefix="$"
-        ></v-text-field>
-        <v-select
-          :items="periods"
-          item-text="text"
-          item-value="id"
-          @change="handlePeriodicityChange"
-          label="Periodicity"
-          solo
-        ></v-select>
-        <v-textarea
-          class="mt-10"
-          outlined
-          name="input-7-4"
-          label="Description"
-          v-model="description"
-        ></v-textarea>
+        <v-text-field v-model="name" :error-messages="nameErrors" :counter="10" label="Name" required
+          @input="$v.name.$touch()" @blur="$v.name.$touch()"></v-text-field>
+        <v-text-field label="Cost" v-model="cost" value="10" required prefix="$"></v-text-field>
+        <v-select :items="periods" item-text="text" item-value="id" @change="handlePeriodicityChange" label="Periodicity"
+          solo></v-select>
+        <v-textarea class="mt-10" outlined name="input-7-4" label="Description" v-model="description"></v-textarea>
         <div class="d-flex flex-row justify-center mt-15">
           <v-btn class="mr-4" @click="submit"> submit </v-btn>
           <v-btn @click="clear"> clear </v-btn>
@@ -43,17 +18,20 @@
   </div>
 </template>
 <script>
-import { validationMixin } from "vuelidate";
-import { required, maxLength } from "vuelidate/lib/validators";
+import { useVuelidate } from '@vuelidate/core'
+import { required, maxLength } from '@vuelidate/validators'
 // eslint-disable-next-line no-unused-vars
 import { AddOwnershipCostEndpoint } from "../../../../Configs/finApi";
 
 export default {
-  mixins: [validationMixin],
   props: ["id"],
 
   validations: {
     name: { required, maxLength: maxLength(60) },
+  },
+
+  setup() {
+    return { v$: useVuelidate() }
   },
 
   data: () => ({
@@ -83,7 +61,7 @@ export default {
 
   methods: {
     handlePeriodicityChange(id) {
-        this.periodicity = id;
+      this.periodicity = id;
     },
 
     async submit() {
@@ -106,7 +84,7 @@ export default {
       const response = await AddOwnershipCostEndpoint(formData);
 
       if (response.status === 200) {
-        this.$router.push("/resources/"+this.id);
+        this.$router.push("/resources/" + this.id);
       }
     },
 

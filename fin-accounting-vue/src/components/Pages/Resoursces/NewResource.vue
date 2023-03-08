@@ -3,39 +3,12 @@
     <h1 class="mb-10">Create new product</h1>
     <div class="form-container">
       <form enctype="multipart/form-data">
-        <v-text-field
-          v-model="name"
-          :error-messages="nameErrors"
-          :counter="10"
-          label="Name"
-          required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
-        ></v-text-field>
-        <v-text-field
-          label="Cost"
-          value="10.00"
-          v-model="cost"
-          required
-          prefix="$"
-        ></v-text-field>
-
-        <v-textarea
-          class="mt-10"
-          outlined
-          name="input-7-4"
-          label="Description"
-          :v-model="description"
-        ></v-textarea>
-        <v-file-input
-          id="img_input"
-          label="File input"
-          @change="setImage"
-          filled
-          prepend-icon="mdi-camera"
-        ></v-file-input>
+        <v-text-field v-model="name" :error-messages="nameErrors" :counter="10" label="Name" required />
+        <v-text-field label="Cost" value="10.00" v-model="cost" required prefix="$" />
+        <v-textarea class="mt-10" outlined name="input-7-4" label="Description" :v-model="description" />
+        <v-file-input id="img_input" label="Image" @change="setImage" filled prepend-icon="mdi-camera"></v-file-input>
         <div class="d-flex image-container mw-100 justify-center mb-5">
-          <img id="img_load" class="mw-100"/>
+          <img id="img_load" class="mw-100" />
         </div>
         <div class="d-flex flex-row justify-center mt-15">
           <v-btn class="mr-4" @click="submit"> submit </v-btn>
@@ -46,17 +19,29 @@
   </div>
 </template>
 <script>
-import { validationMixin } from "vuelidate";
-import { required, maxLength } from "vuelidate/lib/validators";
-// eslint-disable-next-line no-unused-vars
+import { required, maxLength } from '@vuelidate/validators'
 import { createResourceEndpoint } from "../../../Configs/finApi";
 
 export default {
-  mixins: [validationMixin],
   props: ['id'],
 
-  validations: {
-    name: { required, maxLength: maxLength(60) },
+  validations() {
+    return {
+      form: {
+        name: {
+          required
+        },
+        cost: {
+          required
+        },
+        description: {},
+        image: {},
+        password: {
+          required,
+          max: maxLength(6)
+        },
+      },
+    }
   },
 
   data: () => ({
@@ -66,28 +51,10 @@ export default {
     image: null,
   }),
 
-  computed: {
-    nameErrors() {
-      const errors = [];
-      if (!this.$v.name.$dirty) return errors;
-      !this.$v.name.maxLength &&
-        errors.push("Name must be at most 10 characters long");
-      !this.$v.name.required && errors.push("Name is required.");
-      return errors;
-    },
-  },
-
   methods: {
     async submit() {
-      this.$v.$touch();
-      console.log(this.$store.getters.user.id);
-
       if (this.description.length < 1) {
         this.description = "No description.";
-      }
-
-      if(!this.id){
-        this.id = null;
       }
 
       const formData = new FormData();
@@ -127,7 +94,6 @@ export default {
     },
 
     clear() {
-      this.$v.$reset();
       this.name = "";
       this.description = "";
       this.cost = 0;
@@ -143,7 +109,7 @@ export default {
   width: 50%;
 }
 
-#img_load{
+#img_load {
   justify-self: center;
 }
 

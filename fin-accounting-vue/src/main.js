@@ -1,22 +1,13 @@
-import Vue from 'vue'
 import App from './App.vue'
-import store from './store'
-import router from './router'
-import vuetify from './plugins/vuetify'
-import VueCookie from 'vue-cookie'
-import './index.css'
 
-Vue.config.productionTip = false
-Vue.use(VueCookie)
+// Composables
+import { createApp } from 'vue'
 
-new Vue({
-  vuetify,
-  router,
-  store,
-  render: h => h(App),
-  created() {
-    //var token = JSON.parse(this.$cookie.get('auth'));
+// Plugins
+import { registerPlugins } from '@/plugins'
 
-    //console.log(token);
-  }
-}).$mount('#app')
+const app = createApp(App)
+
+registerPlugins(app)
+
+app.mount('#app')

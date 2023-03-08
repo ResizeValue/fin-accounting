@@ -3,7 +3,10 @@
 </template>
 
 <script>
-import PageLayout from './components/Layouts/PageLayout.vue';
+import { useCookies } from "vue3-cookies";
+import PageLayout from "./components/layouts/PageLayout.vue";
+
+const { cookies } = useCookies();
 
 export default {
   name: "App",
@@ -15,7 +18,7 @@ export default {
     accessTokenExpired: false,
   }),
   components: {
-    PageLayout
+    PageLayout,
   },
 
   methods: {
@@ -38,7 +41,7 @@ export default {
         .dispatch("logginUser", {})
         .then((res) => {
           console.log("Success");
-          this.$cookie.set("auth", JSON.stringify(res.data));
+          cookies.set("auth", JSON.stringify(res.data));
         })
         .catch((err) => {
           console.log(err.message);
@@ -47,7 +50,7 @@ export default {
   },
   created() {
     this.$store.dispatch("silentLogin");
-  }
+  },
 };
 </script>
 

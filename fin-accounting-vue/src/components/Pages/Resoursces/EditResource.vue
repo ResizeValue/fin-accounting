@@ -2,44 +2,17 @@
   <div v-if="isLoading">
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
-  <div
-    v-else
-    class="d-flex justify-center align-center flex-column mt-10 mb-10"
-  >
+  <div v-else class="d-flex justify-center align-center flex-column mt-10 mb-10">
     <h1 class="mb-10">Edit resource</h1>
     <div class="form-container">
       <form enctype="multipart/form-data">
-        <v-text-field
-          v-model="name"
-          :error-messages="nameErrors"
-          :counter="10"
-          label="Name"
-          required
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
-        ></v-text-field>
-        <v-text-field
-          label="Cost"
-          value="10.00"
-          v-model="cost"
-          required
-          prefix="$"
-        ></v-text-field>
+        <v-text-field v-model="name" :error-messages="nameErrors" :counter="10" label="Name" required
+          @input="$v.name.$touch()" @blur="$v.name.$touch()"></v-text-field>
+        <v-text-field label="Cost" value="10.00" v-model="cost" required prefix="$"></v-text-field>
 
-        <v-textarea
-          class="mt-10"
-          outlined
-          name="input-7-4"
-          label="Description"
-          :v-model="description"
-        ></v-textarea>
-        <v-file-input
-          id="img_input"
-          label="File input"
-          @change="setImage"
-          filled
-          prepend-icon="mdi-camera"
-        ></v-file-input>
+        <v-textarea class="mt-10" outlined name="input-7-4" label="Description" :v-model="description"></v-textarea>
+        <v-file-input id="img_input" label="File input" @change="setImage" filled
+          prepend-icon="mdi-camera"></v-file-input>
         <div class="d-flex image-container mw-100 justify-center mb-5">
           <img id="img_load" :src="image" class="mw-100" />
         </div>
@@ -51,8 +24,8 @@
   </div>
 </template>
 <script>
-import { validationMixin } from "vuelidate";
-import { required, maxLength } from "vuelidate/lib/validators";
+import { useVuelidate } from '@vuelidate/core'
+import { required, maxLength } from '@vuelidate/validators'
 // eslint-disable-next-line no-unused-vars
 import {
   getUserResourceById,
@@ -60,11 +33,14 @@ import {
 } from "../../../Configs/finApi";
 
 export default {
-  mixins: [validationMixin],
   props: ["id"],
 
   validations: {
     name: { required, maxLength: maxLength(60) },
+  },
+
+  setup() {
+    return { v$: useVuelidate() }
   },
 
   data: () => ({
