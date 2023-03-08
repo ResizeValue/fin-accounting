@@ -1,8 +1,8 @@
-﻿using fin_accounting_api.Application.Users;
+﻿using FinAccountingApi.Application.Users;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace fin_accounting_api.UI.Controllers.Users
+namespace FinAccountingApi.UI.Controllers.Users
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,17 +1,17 @@
-﻿using fin_accounting_api.Application.Accounts;
-using fin_accounting_api.Application.Resources;
-using fin_accounting_api.Application.Resources.Mapper;
-using fin_accounting_api.Application.Users;
-using fin_accounting_api.Application.Users.Mapper;
-using fin_accounting_api.Domain.Users;
-using fin_accounting_api.Persistance;
-using fin_accounting_api.Persistance.Resources;
-using fin_accounting_api.Persistance.Users;
+﻿using FinAccountingApi.Application.Accounts;
+using FinAccountingApi.Application.Resources;
+using FinAccountingApi.Application.Resources.Mapper;
+using FinAccountingApi.Application.Users;
+using FinAccountingApi.Application.Users.Mapper;
+using FinAccountingApi.Domain.Users;
+using FinAccountingApi.Persistance;
+using FinAccountingApi.Persistance.Resources;
+using FinAccountingApi.Persistance.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace fin_accounting_api.InfrastructureIoC
+namespace FinAccountingApi.InfrastructureIoC
 {
     public class DependencyContainer
     {
@@ -29,7 +29,7 @@ namespace fin_accounting_api.InfrastructureIoC
 
         public static void RegisterDbContext(IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<Fin_accounting_apiContext>(options => options.UseSqlServer(connectionString));
+            services.AddDbContext<FinAccountingApiContext>(options => options.UseSqlServer(connectionString));
         }
 
         public static void RegisterIdentity(IServiceCollection services, string connectionString)
@@ -43,7 +43,7 @@ namespace fin_accounting_api.InfrastructureIoC
                         option.Password.RequireUppercase = false;
                         option.Password.RequireLowercase = false;
                     }
-                ).AddEntityFrameworkStores<Fin_accounting_apiContext>()
+                ).AddEntityFrameworkStores<FinAccountingApiContext>()
                 .AddDefaultTokenProviders();
         }
 
@@ -51,7 +51,7 @@ namespace fin_accounting_api.InfrastructureIoC
         {
             var services = provider.CreateScope().ServiceProvider;
 
-            var context = services.GetRequiredService<Fin_accounting_apiContext>();
+            var context = services.GetRequiredService<FinAccountingApiContext>();
             context.Database.Migrate();
         }
     }

@@ -1,6 +1,6 @@
-﻿using fin_accounting_api.Domain.Resources;
+﻿using FinAccountingApi.Domain.Resources;
 
-namespace fin_accounting_api.Application.Resources
+namespace FinAccountingApi.Application.Resources
 {
     public interface IResourceRepository
     {

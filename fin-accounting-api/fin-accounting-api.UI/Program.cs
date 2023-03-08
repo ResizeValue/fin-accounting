@@ -1,4 +1,4 @@
-using fin_accounting_api.InfrastructureIoC;
+using FinAccountingApi.InfrastructureIoC;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;

@@ -1,5 +1,5 @@
-﻿using fin_accounting_api.Application.Users;
-using fin_accounting_api.Domain.Users;
+﻿using FinAccountingApi.Application.Users;
+using FinAccountingApi.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,12 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fin_accounting_api.Persistance.Users
+namespace FinAccountingApi.Persistance.Users
 {
     public class UsersRepository : IUserRepository
     {
-        private readonly Fin_accounting_apiContext _apiContext;
-        public UsersRepository(Fin_accounting_apiContext apiContext)
+        private readonly FinAccountingApiContext _apiContext;
+        public UsersRepository(FinAccountingApiContext apiContext)
         {
             _apiContext = apiContext;
         }

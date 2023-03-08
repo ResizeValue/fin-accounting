@@ -1,12 +1,12 @@
-﻿using fin_accounting_api.Application.Resources.Mapper;
-using fin_accounting_api.Domain.Users;
+﻿using FinAccountingApi.Application.Resources.Mapper;
+using FinAccountingApi.Domain.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fin_accounting_api.Application.Users.Mapper
+namespace FinAccountingApi.Application.Users.Mapper
 {
     public class UserMapper
     {

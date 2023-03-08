@@ -1,11 +1,11 @@
-﻿using fin_accounting_api.Domain.Resources;
+﻿using FinAccountingApi.Domain.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace fin_accounting_api.Application.Resources.OwnershipCost
+namespace FinAccountingApi.Application.Resources.OwnershipCost
 {
     public class OwnershipCostForm
     {
