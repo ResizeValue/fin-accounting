@@ -14,11 +14,15 @@ export async function createResourceEndpoint(res){
 }
 
 export async function getUserResourcesRoot(id){
-    return await axios.get(`${RequestConfig.apiUrl}/api/Resources/userId/${id}`)
+    return await axios.get(`${RequestConfig.apiUrl}/api/Resources/${id}`)
 }
 
 export async function getUserResourceById(id){
     return await axios.get(`${RequestConfig.apiUrl}/api/Resources/resourceId/${id}`)
+}
+
+export async function getUserChecks(id){
+    return await axios.get(`${RequestConfig.apiUrl}/api/PaymentChecks/${id}`)
 }
 
 export async function AddOwnershipCostEndpoint(cost){

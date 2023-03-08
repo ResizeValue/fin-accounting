@@ -25,6 +25,10 @@
                   <v-icon>mdi-folder</v-icon>
                   <v-list-item-title>Resources</v-list-item-title>
                 </v-list-item>
+                <v-list-item link :to="'/checks'">
+                  <v-icon>mdi-folder</v-icon>
+                  <v-list-item-title>Checks</v-list-item-title>
+                </v-list-item>
                 <v-list-item @click="logout" link :to="'/'">
                   <v-icon>mdi-logout</v-icon>
                   <v-list-item-title>Logout</v-list-item-title>
