@@ -59,7 +59,7 @@ namespace FinAccountingApi.Application.Resources
                 {
                     Directory.CreateDirectory(root);
                 }
-                var fileName = Guid.NewGuid().ToString() + System.IO.Path.GetExtension(file.FileName);
+                var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                 var savePath = Path.Combine(root, fileName);
 
                 filePath = Path.Combine(path, "Images", fileName);
