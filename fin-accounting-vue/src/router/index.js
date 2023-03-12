@@ -4,6 +4,7 @@ import ResourcesRoot from '../components/pages/resoursces/ResourcesRoot.vue'
 import Resoursce from '../components/pages/resoursces/Resource.vue'
 import Checks from '../components/pages/checks/Checks.vue'
 import NewCheck from '../components/pages/checks/NewCheck.vue'
+import EditCheck from '../components/pages/checks/EditCheck.vue'
 import NewResource from '../components/pages/resoursces/NewResource.vue'
 import EditResource from '../components/pages/resoursces/EditResource.vue'
 import NewOwnershipCost from '../components/pages/resoursces/ownership/NewOwnershipCost.vue'
@@ -30,6 +31,11 @@ const routes = [
         path: '/new-check',
         name: 'new-checks',
         component: NewCheck
+      },
+      {
+        path: '/edit-check/:id',
+        name: 'edit-check',
+        component: EditCheck
       },
       {
         path: '/resources',

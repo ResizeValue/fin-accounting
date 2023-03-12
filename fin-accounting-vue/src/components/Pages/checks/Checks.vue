@@ -28,7 +28,7 @@
                             {{ check.name }}
                         </v-col>
                         <v-col cols="12" lg="8" md="6">
-                            {{ check.date.toLocalString() }}
+                            {{ check.date }}
                         </v-col>
                         <v-col cols="12" lg="2" md="2">
                             0
@@ -37,7 +37,7 @@
                 </v-expansion-panel-title>
                 <v-expansion-panel-text>
                     <div class="d-flex flex-row mb-5">
-                        <v-btn class="ml-auto" :to="`resource/${check.id}`">To resource</v-btn>
+                        <v-btn class="ml-auto" color="warning" :to="`edit-check/${check.id}`">Edit</v-btn>
                     </div>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

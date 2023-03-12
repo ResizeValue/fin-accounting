@@ -27,7 +27,9 @@
         :to="`/edit-resource/${resource.id}`"
         >Edit</v-btn
       >
-      <v-btn color="error" @click="onDelete" class="manage-btn">Delete resource</v-btn>
+      <v-btn color="error" @click="onDelete" class="manage-btn"
+        >Delete resource</v-btn
+      >
     </div>
 
     <div class="mt-10 mb-15">
@@ -138,11 +140,9 @@ export default {
     },
     toParent() {
       const id = this.resource.parentId;
-      if (!id) {
-        return `/resources`;
-      } else {
-        return `resource/${id}`;
-      }
+
+      if (!id) return `/resources`;
+      else return `resource/${id}`;
     },
   },
   methods: {
@@ -170,7 +170,6 @@ export default {
 
       if (response.status === 200) {
         this.resource = response.data;
-        console.log(this.resource);
         console.log(this.resource);
         this.$store.dispatch("setLoading", false);
       }

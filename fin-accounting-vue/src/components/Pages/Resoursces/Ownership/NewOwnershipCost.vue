@@ -20,8 +20,7 @@
 <script>
 import { useVuelidate } from '@vuelidate/core'
 import { required, maxLength } from '@vuelidate/validators'
-// eslint-disable-next-line no-unused-vars
-import { AddOwnershipCostEndpoint } from "../../../../Configs/finApi";
+import { addOwnershipCostEndpoint } from "../../../../Configs/finApi";
 
 export default {
   props: ["id"],
@@ -81,7 +80,7 @@ export default {
       console.log(this.cost);
       console.log(this.id);
 
-      const response = await AddOwnershipCostEndpoint(formData);
+      const response = await addOwnershipCostEndpoint(formData);
 
       if (response.status === 200) {
         this.$router.push("/resources/" + this.id);

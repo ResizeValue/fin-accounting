@@ -1,11 +1,10 @@
 <template>
   <v-container>
     <v-card class="mb-5">
-      <v-card-title>Create Payment Check</v-card-title>
+      <v-card-title>Edit Payment Check</v-card-title>
       <v-card-text>
         <v-form ref="form" v-model="valid">
           <v-text-field v-model="name" label="Name"></v-text-field>
-
           <v-card class="my-5">
             <v-card-title>Products</v-card-title>
             <v-card-text>
@@ -37,14 +36,13 @@
                       <v-text-field
                         v-model="product.name"
                         label="Product Name"
-                        :rules="nameRules"
                         required
                       ></v-text-field>
                     </v-col>
                     <v-col class="ml-1">
                       <v-text-field
                         v-model="product.price"
-                        label="Product price"
+                        label="Product Price"
                         @input="onPriceInput($event, product)"
                         required
                       ></v-text-field>
@@ -98,29 +96,66 @@
         </v-form>
       </v-card-text>
       <v-card-actions>
-        <v-btn @click="submit" :disabled="!valid">Submit</v-btn>
+        <v-btn @click="submit" :disabled="!valid">Update</v-btn>
         <v-btn @click="reset">Reset</v-btn>
       </v-card-actions>
     </v-card>
   </v-container>
 </template>
 <script>
-import { addPaymentCheck, getUserTags } from "../../../Configs/finApi";
+import {
+  getChecksById,
+  getUserTags,
+  updatePaymentCheck,
+} from "../../../Configs/finApi";
 
 export default {
   data() {
     return {
       valid: false,
       name: "",
+      date: null,
       nameRules: [(v) => !!v || "Name is required"],
-      products: [{ name: "", price: 0, tags: [], tagInput: "" }],
+      products: [],
       tagList: [],
     };
   },
   created() {
+    this.loadPaymentCheck();
     this.loadTagList();
   },
   methods: {
+    async loadPaymentCheck() {
+      const checkId = this.$route.params.id;
+
+      try {
+        const paymentCheck = await getChecksById(checkId);
+
+        console.log("paymentCheck", paymentCheck.data);
+
+        this.name = paymentCheck.data.name;
+        this.date = paymentCheck.data.date;
+        this.products = paymentCheck.data.products.map((product) => ({
+          name: product.name,
+          price: product.price,
+          tags: product.tags.map((tag) => tag.name),
+          tagInput: "",
+        }));
+      } catch (error) {
+        console.log("Failed to load payment check", error);
+      }
+
+      this.valid = true;
+    },
+    async loadTagList() {
+      try {
+        const response = await getUserTags(this.$store.getters.user.id);
+
+        this.tagList = response.data.map((tag) => tag.name);
+      } catch (error) {
+        console.log("Failed to load tags");
+      }
+    },
     onPriceInput(event, product) {
       const value = parseFloat(event.target.value);
 
@@ -130,19 +165,13 @@ export default {
 
       event.target.value = product.price;
     },
-    async loadTagList() {
-      try {
-        const response = await getUserTags(this.$store.getters.user.id);
-
-        console.log("Tags", response.data);
-
-        this.tagList = response.data.map((tag) => tag.name);
-      } catch (error) {
-        console.log("Failed to load tags");
-      }
-    },
     addProduct() {
-      this.products.push({ name: "", price: 0, tags: [] });
+      this.products.push({
+        name: "",
+        price: 0,
+        tags: [],
+        tagInput: "",
+      });
     },
     removeProduct(index) {
       this.products.splice(index, 1);
@@ -150,7 +179,6 @@ export default {
     addTag(product) {
       const tag = product.tagInput.trim();
       if (tag && !product.tags.includes(tag)) product.tags.push(tag);
-
       if (tag && !this.tagList.includes(tag)) this.tagList.push(tag);
 
       product.tagInput = null;
@@ -163,6 +191,7 @@ export default {
       if (!this.$refs.form.validate()) return;
 
       const paymentCheck = {
+        id: this.$route.params.id,
         name: this.name,
         products: this.products.map((product) => ({
           name: product.name,
@@ -173,11 +202,11 @@ export default {
       };
 
       try {
-        await addPaymentCheck(paymentCheck);
+        await updatePaymentCheck(paymentCheck);
 
         this.$router.push("/checks");
       } catch (error) {
-        console.log("Failed to add payment check", error);
+        console.log("Failed to update payment check", error);
       }
     },
     reset() {
