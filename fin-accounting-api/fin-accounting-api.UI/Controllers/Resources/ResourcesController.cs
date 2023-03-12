@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Net.NetworkInformation;
 
-namespace FinAccountingApi.UI.Controllers.Resources
+namespace FinAccountingApi.Presentation.Controllers.Resources
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -23,21 +23,21 @@ namespace FinAccountingApi.UI.Controllers.Resources
         }
 
         [HttpGet]
-        [Route("resourceId/{id}")]
+        [Route("user/{userId}")]
+        public async Task<IActionResult> GetUserResourcesRoot(string userId)
+        {
+            var resources = await _resourceService.GetUserResources(userId);
+
+            return Ok(resources);
+        }
+
+        [HttpGet]
+        [Route("{id}")]
         public async Task<IActionResult> GetUserResource(int id)
         {
             var resource = await _resourceService.GetResourceById(id);
 
             return Ok(resource);
-        }
-
-        [HttpGet]
-        [Route("{id}")]
-        public async Task<IActionResult> GetUserResourcesRoot(string id)
-        {
-            var resources = await _resourceService.GetUserResources(id);
-
-            return Ok(resources);
         }
 
         [HttpPost]

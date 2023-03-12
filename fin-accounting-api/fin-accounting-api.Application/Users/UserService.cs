@@ -1,12 +1,5 @@
-﻿using FinAccountingApi.Application.Accounts.Auth;
-using FinAccountingApi.Application.Resources.Mapper;
-using FinAccountingApi.Domain.Users;
-using Microsoft.AspNetCore.Identity;
+﻿using FinAccountingApi.Application.Resources.Mapper;
 using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace FinAccountingApi.Application.Users
 {
@@ -25,12 +18,9 @@ namespace FinAccountingApi.Application.Users
 
         public async Task<UserModel> GetUserProfileAsync(string id)
         {
-            var user = await _userRepository.GetUserById(id);
+            var user = await _userRepository.GetUserByIdAsync(id);
 
-            if (user == null)
-            {
-                throw new KeyNotFoundException(id);
-            }
+            if (user == null) throw new KeyNotFoundException(id);
 
             return new UserModel
             {
@@ -39,11 +29,6 @@ namespace FinAccountingApi.Application.Users
                 Name = user.Name,
                 Resources = ResourceMapper.GetListResourceModel(user.Resources)
             };
-        }
-
-        public Task LoginUserAsync(LoginModel model)
-        {
-            throw new NotImplementedException();
         }
     }
 }

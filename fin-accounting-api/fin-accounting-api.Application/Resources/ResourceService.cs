@@ -24,28 +24,28 @@ namespace FinAccountingApi.Application.Resources
 
         public async Task<IEnumerable<ResourceModel>> GetUserResources(string id)
         {
-            var resources = await _resourceRepository.GetResourcesForUser(id);
+            var resources = await _resourceRepository.GetResourcesForUserAsync(id);
 
             return ResourceMapper.GetListResourceModel(resources);
         }
 
         public async Task<ResourceModel> GetResourceById(int id)
         {
-            var resource = await _resourceRepository.GetResourceById(id);
+            var resource = await _resourceRepository.GetResourceByIdAsync(id);
 
             return ResourceMapper.GetResourceModel(resource);
         }
 
         public async Task DeleteResource(int id)
         {
-            var resource = await _resourceRepository.GetResourceById(id);
+            var resource = await _resourceRepository.GetResourceByIdAsync(id);
 
-            await _resourceRepository.DeleteResource(resource);
+            await _resourceRepository.DeleteResourceAsync(resource);
         }
 
         public async Task AddResourceToUser(ResourceForm resourceForm, string path)
         {
-            var user = await _userRepository.GetUserById(resourceForm.UserId);
+            var user = await _userRepository.GetUserByIdAsync(resourceForm.UserId);
 
             var file = resourceForm.Image;
 
@@ -80,12 +80,12 @@ namespace FinAccountingApi.Application.Resources
                 UserResourceId = resourceForm.ResourceId
             };
 
-            await _resourceRepository.AddResource(resource);
+            await _resourceRepository.AddResourceAsync(resource);
         }
 
         public async Task UpdateResource(ResourceForm resourceForm, string path)
         {
-            var resource = await _resourceRepository.GetResourceById(resourceForm.Id.Value);
+            var resource = await _resourceRepository.GetResourceByIdAsync(resourceForm.Id.Value);
 
             var file = resourceForm.Image;
 
@@ -116,12 +116,12 @@ namespace FinAccountingApi.Application.Resources
             resource.Name = resourceForm.Name;
             resource.Description = resourceForm.Description;
 
-            await _resourceRepository.UpdateResource(resource);
+            await _resourceRepository.UpdateResourceAsync(resource);
         }
 
         public async Task AddOwnershipCostToResource(OwnershipCostForm costForm)
         {
-            var resource = await _resourceRepository.GetResourceById(costForm.ResourceId);
+            var resource = await _resourceRepository.GetResourceByIdAsync(costForm.ResourceId);
 
             var model = new Domain.Resources.OwnershipCost
             {

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "fin-accounting-api.UI", "fin-accounting-api.UI\fin-accounting-api.UI.csproj", "{5F407BB8-8AC0-4726-9C63-48D88A78C68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinAccountingApi.Presentation", "fin-accounting-api.UI\FinAccountingApi.Presentation.csproj", "{5F407BB8-8AC0-4726-9C63-48D88A78C68F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fin-accounting-api.Application", "fin-accounting-api.Application\fin-accounting-api.Application.csproj", "{45D80F5F-1B38-4394-8CE9-B302EDD53A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinAccountingApi.Application", "fin-accounting-api.Application\FinAccountingApi.Application.csproj", "{45D80F5F-1B38-4394-8CE9-B302EDD53A12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fin-accounting-api.Domain", "fin-accounting-api.Domain\fin-accounting-api.Domain.csproj", "{6953836C-F342-4FAC-84A9-0487E0025247}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinAccountingApi.Domain", "fin-accounting-api.Domain\FinAccountingApi.Domain.csproj", "{6953836C-F342-4FAC-84A9-0487E0025247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fin-accounting-api.Persistance", "fin-accounting-api.Persistance\fin-accounting-api.Persistance.csproj", "{2FDB9586-94B4-4EFA-8ED9-8426AD020AFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinAccountingApi.Persistance", "fin-accounting-api.Persistance\FinAccountingApi.Persistance.csproj", "{2FDB9586-94B4-4EFA-8ED9-8426AD020AFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "fin-accounting-api.InfrastructureIoC", "fin-accounting-api.InfrastructureIoC\fin-accounting-api.InfrastructureIoC.csproj", "{C3BC3909-C2CD-40B5-88D2-45E98DDC5B17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinAccountingApi.InfrastructureIoC", "fin-accounting-api.InfrastructureIoC\FinAccountingApi.InfrastructureIoC.csproj", "{C3BC3909-C2CD-40B5-88D2-45E98DDC5B17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

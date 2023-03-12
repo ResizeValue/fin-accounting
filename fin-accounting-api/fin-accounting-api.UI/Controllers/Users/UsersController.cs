@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FinAccountingApi.UI.Controllers.Users
+namespace FinAccountingApi.Presentation.Controllers.Users
 {
     [Route("api/[controller]")]
     [ApiController]

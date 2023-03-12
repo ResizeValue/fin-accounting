@@ -4,7 +4,7 @@ using FinAccountingApi.Application.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace FinAccountingApi.UI.Controllers.Accounts
+namespace FinAccountingApi.Presentation.Controllers.Accounts
 {
     [Route("api/[controller]")]
     [ApiController]

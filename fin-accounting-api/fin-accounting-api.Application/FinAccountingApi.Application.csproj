@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>fin_accounting_api.Application</RootNamespace>
+    <RootNamespace>FinAccountingApi.Application</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\fin-accounting-api.Domain\fin-accounting-api.Domain.csproj" />
+    <ProjectReference Include="..\fin-accounting-api.Domain\FinAccountingApi.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -13,13 +13,7 @@ namespace FinAccountingApi.Persistance.Resources
             _apiContext = apiContext;
         }
 
-        public async Task AddResource(UserResource resource)
-        {
-            await _apiContext.AddAsync(resource);
-            await _apiContext.SaveChangesAsync();
-        }
-
-        public async Task<ICollection<UserResource>> GetResourcesForUser(string userId)
+        public async Task<ICollection<UserResource>> GetResourcesForUserAsync(string userId)
         {
             return await _apiContext.UserResources
                 .Where(res => res.Owner.Id == userId && res.UserResourceId == null)
@@ -28,13 +22,19 @@ namespace FinAccountingApi.Persistance.Resources
                 .ToListAsync();
         }
 
-        public async Task<UserResource> GetResourceById(int resourceId)
+        public async Task<UserResource> GetResourceByIdAsync(int resourceId)
         {
             return await _apiContext.UserResources
                 .Include(res => res.Resources)
                 .Include(res => res.OwnershipCost)
                 .FirstAsync(res => res.Id == resourceId);
-                
+
+        }
+
+        public async Task AddResourceAsync(UserResource resource)
+        {
+            await _apiContext.AddAsync(resource);
+            await _apiContext.SaveChangesAsync();
         }
 
         public async Task AddOwnershipCostToResourceAsync(OwnershipCost cost)
@@ -43,13 +43,13 @@ namespace FinAccountingApi.Persistance.Resources
             await _apiContext.SaveChangesAsync();
         }
 
-        public async Task UpdateResource(UserResource resource)
+        public async Task UpdateResourceAsync(UserResource resource)
         {
             _apiContext.UserResources.Update(resource);
             await _apiContext.SaveChangesAsync();
         }
 
-        public async Task DeleteResource(UserResource resource)
+        public async Task DeleteResourceAsync(UserResource resource)
         {
             _apiContext.UserResources.Remove(resource);
             await _apiContext.SaveChangesAsync();

@@ -1,11 +1,5 @@
-﻿using FinAccountingApi.Application.Resources.OwnershipCost;
-using FinAccountingApi.Application.Users.Mapper;
+﻿using FinAccountingApi.Application.Users.Mapper;
 using FinAccountingApi.Domain.Resources;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinAccountingApi.Application.Resources.Mapper
 {
@@ -27,10 +21,11 @@ namespace FinAccountingApi.Application.Resources.Mapper
                 Owner = UserMapper.GetUserModel(resource.Owner),
             };
         }
-        public static List<ResourceModel> GetListResourceModel(ICollection<UserResource> resource)
+
+        public static IEnumerable<ResourceModel> GetListResourceModel(IEnumerable<UserResource> resource)
         {
-            if(resource == null) return null;
-            return resource.Select(x => GetResourceModel(x)).ToList();
+            if (resource == null) return null;
+            return resource.Select(x => GetResourceModel(x));
         }
     }
 }

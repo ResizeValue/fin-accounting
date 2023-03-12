@@ -4,11 +4,11 @@ namespace FinAccountingApi.Application.Resources
 {
     public interface IResourceRepository
     {
-        public Task<ICollection<UserResource>> GetResourcesForUser(string userId);
-        public Task<UserResource> GetResourceById(int id);
+        public Task<ICollection<UserResource>> GetResourcesForUserAsync(string userId);
+        public Task<UserResource> GetResourceByIdAsync(int id);
         public Task AddOwnershipCostToResourceAsync(Domain.Resources.OwnershipCost cost);
-        public Task AddResource(UserResource resource);
-        public Task DeleteResource(UserResource resource);
-        public Task UpdateResource(UserResource resource);
+        public Task AddResourceAsync(UserResource resource);
+        public Task UpdateResourceAsync(UserResource resource);
+        public Task DeleteResourceAsync(UserResource resource);
     }
 }

@@ -1,10 +1,14 @@
 ﻿using FinAccountingApi.Application.Accounts;
+using FinAccountingApi.Application.PaymentChecks;
+using FinAccountingApi.Application.PaymentChecks.Products.Tags;
 using FinAccountingApi.Application.Resources;
 using FinAccountingApi.Application.Resources.Mapper;
 using FinAccountingApi.Application.Users;
 using FinAccountingApi.Application.Users.Mapper;
 using FinAccountingApi.Domain.Users;
 using FinAccountingApi.Persistance;
+using FinAccountingApi.Persistance.PaymentChecks;
+using FinAccountingApi.Persistance.PaymentChecks.Products.Tags;
 using FinAccountingApi.Persistance.Resources;
 using FinAccountingApi.Persistance.Users;
 using Microsoft.AspNetCore.Identity;
@@ -19,7 +23,11 @@ namespace FinAccountingApi.InfrastructureIoC
         {
             services.AddScoped(typeof(IUserRepository), typeof(UsersRepository));
             services.AddScoped(typeof(IResourceRepository), typeof(ResourcesRepository));
+            services.AddScoped(typeof(ITagRepository), typeof(TagRepository));
+            services.AddScoped(typeof(IPaymentCheckRepository), typeof(PaymentChecksRepository));
 
+            services.AddScoped<TagService>();
+            services.AddScoped<PaymentService>();
             services.AddScoped<UserService>();
             services.AddScoped<ResourceService>();
             services.AddScoped<AccountsService>();
